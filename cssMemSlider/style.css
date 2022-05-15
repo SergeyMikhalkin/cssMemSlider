@@ -48,11 +48,12 @@ img {
     border-radius: 0.5rem;
 }
 
-.img-2,
-.img-3,
-.img-4,
-.img-5,
-.img-6 {
+#img-1,
+#img-2,
+#img-3,
+#img-4,
+#img-5,
+#img-6 {
     display: none;
 }
 
@@ -62,11 +63,12 @@ p {
     letter-spacing: 0.1rem;
 }
 
-.desc-2,
-.desc-3,
-.desc-4,
-.desc-5,
-.desc-6 {
+#desc-1,
+#desc-2,
+#desc-3,
+#desc-4,
+#desc-5,
+#desc-6 {
     display: none;
 }
 
@@ -82,7 +84,7 @@ input[type="radio"] {
     display: none;
 }
 
-input[type="radio"] + div {
+label div {
     height: 0.8rem;
     width: 0.8rem;
     cursor: pointer;
@@ -92,17 +94,49 @@ input[type="radio"] + div {
     border-radius: 100%;
 } 
 
-input[type="radio"] + div:hover {
+label div:hover {
     background: #ffffff;
     border-color: #ffffff;   
 }
 
-input[type="radio"]:checked + div {
+#frame-1:checked ~ .controls label .ctrl-1,
+#frame-2:checked ~ .controls label .ctrl-2, 
+#frame-3:checked ~ .controls label .ctrl-3,
+#frame-4:checked ~ .controls label .ctrl-4, 
+#frame-5:checked ~ .controls label .ctrl-5,
+#frame-6:checked ~ .controls label .ctrl-6
+{
     background: #000000;
 }
 
-input[type="radio"]:checked + div:hover {
-    background: #000000;
+#frame-1:checked ~ .images #img-1,
+#frame-1:checked ~ .description #desc-1 {
+    display: block;
+}
+
+#frame-2:checked ~ .images #img-2,
+#frame-2:checked ~ .description #desc-2 {
+    display: block;
+}
+
+#frame-3:checked ~ .images #img-3,
+#frame-3:checked ~ .description #desc-3 {
+    display: block;
+}
+
+#frame-4:checked ~ .images #img-4,
+#frame-4:checked ~ .description #desc-4 {
+    display: block;
+}
+
+#frame-5:checked ~ .images #img-5,
+#frame-5:checked ~ .description #desc-5 {
+    display: block;
+}
+
+#frame-6:checked ~ .images #img-6,
+#frame-6:checked ~ .description #desc-6 {
+    display: block;
 }
 
 @media screen and (max-width: 320px) {
