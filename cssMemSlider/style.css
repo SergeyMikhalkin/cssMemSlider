@@ -23,6 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .description {
@@ -32,6 +33,7 @@ body {
     display: flex;
     align-items:flex-start;
     justify-content: flex-start;
+    overflow: hidden;
 }
 
 .controls {
@@ -54,7 +56,9 @@ img {
 #img-4,
 #img-5,
 #img-6 {
-    display: none;
+    visibility: hidden;
+    width: 0;
+    opacity: 0;
 }
 
 p {
@@ -69,7 +73,9 @@ p {
 #desc-4,
 #desc-5,
 #desc-6 {
-    display: none;
+    visibility: hidden;
+    width: 0;
+    opacity: 0;
 }
 
 label {
@@ -111,32 +117,58 @@ label div:hover {
 
 #frame-1:checked ~ .images #img-1,
 #frame-1:checked ~ .description #desc-1 {
-    display: block;
+    visibility: visible;
+    width: auto;
 }
 
 #frame-2:checked ~ .images #img-2,
 #frame-2:checked ~ .description #desc-2 {
-    display: block;
+    visibility: visible;
+    width: auto;
 }
 
 #frame-3:checked ~ .images #img-3,
 #frame-3:checked ~ .description #desc-3 {
-    display: block;
+    visibility: visible;
+    width: auto;
 }
 
 #frame-4:checked ~ .images #img-4,
 #frame-4:checked ~ .description #desc-4 {
-    display: block;
+    visibility: visible;
+    width: auto;
 }
 
 #frame-5:checked ~ .images #img-5,
 #frame-5:checked ~ .description #desc-5 {
-    display: block;
+    visibility: visible;
+    width: auto;
 }
 
 #frame-6:checked ~ .images #img-6,
 #frame-6:checked ~ .description #desc-6 {
-    display: block;
+    visibility: visible;
+    width: auto;
+}
+
+#frame-1:checked ~ .images #img-1,
+#frame-2:checked ~ .images #img-2,
+#frame-3:checked ~ .images #img-3,
+#frame-4:checked ~ .images #img-4,
+#frame-5:checked ~ .images #img-5,
+#frame-6:checked ~ .images #img-6 {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+#frame-1:checked ~ .description #desc-1,
+#frame-2:checked ~ .description #desc-2,
+#frame-3:checked ~ .description #desc-3,
+#frame-4:checked ~ .description #desc-4,
+#frame-5:checked ~ .description #desc-5,
+#frame-6:checked ~ .description #desc-6 {
+    opacity: 1;
+    transition: all 2s;
 }
 
 @media screen and (max-width: 320px) {
@@ -164,7 +196,13 @@ label div:hover {
         justify-content: center;
     }
 
-    img {
+    img,       
+    #frame-1:checked ~ .images #img-1,
+    #frame-2:checked ~ .images #img-2,
+    #frame-3:checked ~ .images #img-3,
+    #frame-4:checked ~ .images #img-4,
+    #frame-5:checked ~ .images #img-5,
+    #frame-6:checked ~ .images #img-6 {
         width: 92vw;
     }
 }
