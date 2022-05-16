@@ -6,6 +6,7 @@
 
 body {
     background-color: #24292f;
+    overflow: hidden;
 }
 
 .main {
@@ -24,6 +25,8 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    height: 85vh;
+    width: 90vw;
 }
 
 .description {
@@ -48,6 +51,7 @@ body {
 
 img {
     border-radius: 0.5rem;
+    max-height: 80vh;
 }
 
 #img-1,
