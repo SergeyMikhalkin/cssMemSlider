@@ -1,0 +1,217 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #24292f;
+    overflow: hidden;
+}
+
+.main {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.images {
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 85vh;
+    width: 90vw;
+}
+
+.description {
+    grid-column: 1 / 3;
+    grid-row: 4; 
+
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.controls {
+    grid-column: 4;
+    grid-row: 4; 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+img {
+    border-radius: 0.5rem;
+    max-height: 80vh;
+}
+
+#img-1,
+#img-2,
+#img-3,
+#img-4,
+#img-5,
+#img-6 {
+    visibility: hidden;
+    width: 0;
+    opacity: 0;
+}
+
+p {
+    font-family: 'Tinos', serif;
+    color: blanchedalmond;
+    letter-spacing: 0.1rem;
+}
+
+#desc-1,
+#desc-2,
+#desc-3,
+#desc-4,
+#desc-5,
+#desc-6 {
+    visibility: hidden;
+    width: 0;
+    opacity: 0;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label div {
+    height: 0.8rem;
+    width: 0.8rem;
+    cursor: pointer;
+    vertical-align: middle;
+    background: #54aeff;
+    border: 0.15rem solid #54aeff;
+    border-radius: 100%;
+    transition: all .5s; 
+} 
+
+label div:hover {
+    background: #ffffff;
+    border-color: #ffffff;  
+    opacity: 1;
+    transition: all .5s; 
+}
+
+#frame-1:checked ~ .controls label .ctrl-1,
+#frame-2:checked ~ .controls label .ctrl-2, 
+#frame-3:checked ~ .controls label .ctrl-3,
+#frame-4:checked ~ .controls label .ctrl-4, 
+#frame-5:checked ~ .controls label .ctrl-5,
+#frame-6:checked ~ .controls label .ctrl-6
+{
+    background: #000000;
+    opacity: 1;
+    transition: all .5s;
+}
+
+#frame-1:checked ~ .images #img-1,
+#frame-1:checked ~ .description #desc-1 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-2:checked ~ .images #img-2,
+#frame-2:checked ~ .description #desc-2 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-3:checked ~ .images #img-3,
+#frame-3:checked ~ .description #desc-3 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-4:checked ~ .images #img-4,
+#frame-4:checked ~ .description #desc-4 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-5:checked ~ .images #img-5,
+#frame-5:checked ~ .description #desc-5 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-6:checked ~ .images #img-6,
+#frame-6:checked ~ .description #desc-6 {
+    visibility: visible;
+    width: auto;
+}
+
+#frame-1:checked ~ .images #img-1,
+#frame-2:checked ~ .images #img-2,
+#frame-3:checked ~ .images #img-3,
+#frame-4:checked ~ .images #img-4,
+#frame-5:checked ~ .images #img-5,
+#frame-6:checked ~ .images #img-6 {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+#frame-1:checked ~ .description #desc-1,
+#frame-2:checked ~ .description #desc-2,
+#frame-3:checked ~ .description #desc-3,
+#frame-4:checked ~ .description #desc-4,
+#frame-5:checked ~ .description #desc-5,
+#frame-6:checked ~ .description #desc-6 {
+    opacity: 1;
+    transition: all 2s;
+}
+
+@media screen and (max-width: 320px) {
+    .main {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 0.7rem;
+        padding: 3vw;
+    }
+
+    .images {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .description {
+        grid-column: 1;
+        grid-row: 3; 
+    }
+
+    .controls {
+        grid-column: 1;
+        grid-row: 2; 
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    img,       
+    #frame-1:checked ~ .images #img-1,
+    #frame-2:checked ~ .images #img-2,
+    #frame-3:checked ~ .images #img-3,
+    #frame-4:checked ~ .images #img-4,
+    #frame-5:checked ~ .images #img-5,
+    #frame-6:checked ~ .images #img-6 {
+        width: 92vw;
+    }
+}
