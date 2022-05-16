@@ -102,11 +102,15 @@ label div {
     background: #54aeff;
     border: 0.15rem solid #54aeff;
     border-radius: 100%;
+    opacity: 0;
+    transition: all .5s; 
 } 
 
 label div:hover {
     background: #ffffff;
-    border-color: #ffffff;   
+    border-color: #ffffff;  
+    opacity: 1;
+    transition: all .5s; 
 }
 
 #frame-1:checked ~ .controls label .ctrl-1,
@@ -117,6 +121,8 @@ label div:hover {
 #frame-6:checked ~ .controls label .ctrl-6
 {
     background: #000000;
+    opacity: 1;
+    transition: all .5s;
 }
 
 #frame-1:checked ~ .images #img-1,
